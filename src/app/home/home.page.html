@@ -1,20 +1,93 @@
 <ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Blank
+  <ion-toolbar color="primary">
+    <ion-buttons collapse="true" slot="start">
+      <ion-button>
+        <ion-icon name="arrow-back-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    
+    <ion-title style="margin-left: -20px;font-size:14px;">
+      采购历史
     </ion-title>
+
+    <ion-buttons slot="end">
+      <ion-button style="font-size: 14px;" [routerLink]="['/add']">
+        <ion-icon name="add-outline" size="small"></ion-icon>
+        新增
+      </ion-button>
+    </ion-buttons>
+
+    <ion-buttons slot="end" >
+      <ion-button style="font-size: 14px;" [routerLink]="['/search']">
+        <ion-icon name="search-outline" size="small"></ion-icon>
+        查询
+      </ion-button>
+    </ion-buttons>
+
   </ion-toolbar>
+
+  <!--主页按钮-->
+<ion-grid [fixed]="true">
+  <ion-row>
+    <ion-col>
+      <ion-buttons collapse="full">
+      <ion-button color="light"><ion-label color="dark">默认</ion-label></ion-button>
+      </ion-buttons>
+    </ion-col>
+    <ion-col>
+      <ion-buttons collapse="full">
+      <ion-button color="light"><ion-label color="dark">已采购</ion-label></ion-button>
+      </ion-buttons>
+    </ion-col>
+    <ion-col>
+      <ion-buttons collapse="full">
+      <ion-button color="light"><ion-label color="dark">草稿</ion-label></ion-button>
+      </ion-buttons>
+    </ion-col>
+  </ion-row>
+
+  <ion-row>
+    <ion-col>
+      <ion-buttons>
+      <ion-button color="light"><ion-label color="dark">待入库</ion-label></ion-button>
+      </ion-buttons>
+    </ion-col>
+    <ion-col>
+      <ion-buttons>
+      <ion-button color="light"><ion-label color="dark">部分入库</ion-label></ion-button>
+      </ion-buttons>
+    </ion-col>
+    <ion-col>
+      <ion-buttons>
+      <ion-button color="light" class="button"><ion-label color="dark">撤销</ion-label></ion-button>
+      </ion-buttons>
+    </ion-col>
+  </ion-row>
+</ion-grid>
+
+
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+  <div style="background-color: #e6e6e6;">
+    <ion-icon size="small" name="star-outline" style="color: gold;margin-left: 10px;"></ion-icon>
+    <span style="font-size: 14px;line-height: 25px; color: gray;">长按单据记录可进行批量操作<span class="length">共{{list.length}}条</span></span>
   </div>
+
+  <ion-list *ngFor="let item of list">
+    <ion-item>
+      <ion-label>
+      <span class="gongyingshang">{{item.gongyingshang}}</span>
+      <span class="shuliang">采购：{{item.shuliang}}</span>
+      <br>
+      <span>{{item.danhao}}</span>
+      <span class="money">￥{{item.money}}</span>
+      <br>
+      <span>{{item.date}}</span>
+      <span class="cangku">{{item.cangku}}</span>
+    </ion-label>
+    </ion-item>
+
+  </ion-list>
+  
 </ion-content>

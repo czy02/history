@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { List } from '../services/thing.service';
+import { lists } from '../services/list.service';
 
 @Component({
   selector: 'app-home',
@@ -7,6 +9,12 @@ import { Component } from '@angular/core';
 })
 export class HomePage {
 
+  public list=lists;
   constructor() {}
 
+
+  add(gongyingshang:string):void{
+    gongyingshang=gongyingshang.trim();
+    
+  }
 }

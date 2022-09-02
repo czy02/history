@@ -1,0 +1,58 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title style="font-size:16px;">查询</ion-title>
+
+    <ion-buttons slot="end">
+      <ion-button size="small" [routerLink]="['/home']">
+        <ion-icon name="close-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item>
+    <ion-grid fixed>
+      <ion-row>
+        <ion-col size="4"><ion-label color="medium">供应商</ion-label></ion-col>
+        <ion-col style="margin-top:-10px;"><ion-input required placeholder="请选择供应商"></ion-input></ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col size="4"><ion-label color="medium">单号</ion-label></ion-col>
+        <ion-col style="margin-top:-10px;"><ion-input class="fen" required placeholder="请输入供应单号"></ion-input></ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-item>
+
+
+  <ion-item>
+    <ion-grid fixed>
+      <ion-row>
+        <ion-col size="4"><ion-label color="medium">开始日期</ion-label></ion-col>
+        <ion-col> {{myDate}} </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col size="4"><ion-label color="medium">结束日期</ion-label></ion-col>
+        <ion-col>{{myDate}}</ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-item>
+
+  <ion-item>
+      <ion-toggle  [(ngModel)]="print.printSL" slot="end" color="secondary"></ion-toggle>
+      <ion-grid fixed>
+        <ion-row>
+          <ion-col size="8" ><ion-label color="medium">显示打印次数</ion-label></ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-item>
+
+  <ion-button expand="full"  fill="solid" color="primary">搜索</ion-button>
+
+
+
+ 
+
+</ion-content>
