@@ -23,7 +23,7 @@
   <ion-item style="font-size:14px">
         <ion-label color="medium" class="gongyingshang">供应商</ion-label>
         <ion-select okText="确定" cancelText="取消" slot="end">
-          <ion-select-option *ngFor="let item of list">
+          <ion-select-option *ngFor="let item of list" [(ngModel)]="addlist.gongyingshang">
             {{item.gongyingshang}}
           </ion-select-option>
         </ion-select>
@@ -32,14 +32,14 @@
   <ion-item style="font-size:14px;">
         <ion-label color="medium" class="gongyingshang">仓库</ion-label>
         <ion-select okText="确定" cancelText="取消" slot="end">
-          <ion-select-option *ngFor="let item of list">
+          <ion-select-option *ngFor="let item of list" [(ngModel)]="addlist.cangku">
             {{item.cangku}}
           </ion-select-option>
         </ion-select>
   </ion-item>
 
   <ion-item style="font-size:12px">
-    <ion-toggle  [(ngModel)]="list.saoyisao" slot="end" color="secondary"></ion-toggle>
+    <ion-toggle  [(ngModel)]="addlist.select" slot="end" color="secondary"></ion-toggle>
         <ion-label style="font-size:12px" color="medium">选择商品</ion-label>
         <ion-label class="saoyisao" color="medium" style="font-size:12px">按手扫一扫</ion-label>
   </ion-item>
@@ -62,7 +62,7 @@
   </ion-item>
 
   <ion-item style="font-size:14px;">
-    <ion-toggle class="ruku" [(ngModel)]="list.ryku" slot="end" color="secondary"></ion-toggle>
+    <ion-toggle class="ruku" [(ngModel)]="addlist.dingdanzhuangtai" slot="end" color="secondary"></ion-toggle>
     <ion-label color="medium">直接入库</ion-label>
     
   </ion-item>
@@ -70,7 +70,7 @@
   <ion-item style="font-size:14px">
   <ion-label color="medium" class="gongyingshang">结算账户</ion-label>
     <ion-select okText="确定" cancelText="取消" slot="end">
-      <ion-select-option *ngFor="let item of list">
+      <ion-select-option *ngFor="let item of list" [(ngModel)]="addlist.account">
         {{item.account}}
       </ion-select-option>
     </ion-select>
@@ -78,7 +78,7 @@
 
 <ion-item style="font-size:14px;">
   <ion-label color="medium">实付金额</ion-label>
-  <ion-input class="money"></ion-input>
+  <ion-input class="money" [(ngModel)]="addlist.money"></ion-input>
 </ion-item>
 
 <ion-item style="font-size:14px;">

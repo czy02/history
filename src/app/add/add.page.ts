@@ -24,6 +24,17 @@ export class AddPage implements OnInit {
       account:'支付宝'
     }
   ]
+
+  addlist:any={
+    gongyingshang:'',
+    cangku:'',
+    dingdanzhuangtai:'',
+    account:'',
+    money:''
+  }
+    
+  
+
   constructor(
      public home:HomePage
   ) {}
